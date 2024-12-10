@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <div th:fragment="content">
+        <h1 class="display-4">Health Clinic</h1>
+        <div class="mt-5">
+            <a th:href="@{/doctor/appointments}" class="btn btn-success me-4 px-4 py-3 my-3">Your appointments</a>
+            <a th:href="@{/doctors}" class="btn btn-success ms-4 px-4 py-3 my-3">Show list of doctors</a>
+        </div>
+    </div>
+</body>
+</html>

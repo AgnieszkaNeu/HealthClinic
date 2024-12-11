@@ -46,7 +46,7 @@ public class AuthenticationController {
     ){
         if(role.equals("doctor")){
             Doctor doctor = new Doctor(user.getUsername(),user.getFirstname(),user.getLastname(),
-                    user.getPhoneNumber(),user.getPassword(),user.getPESEL(),null,null);
+                    user.getPhoneNumber(),user.getPassword(),user.getPESEL(),null,null,null);
             doctorService.save(doctor);
         }
         if(role.equals("patient")){

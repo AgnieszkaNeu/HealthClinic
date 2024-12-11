@@ -2,8 +2,23 @@
 <html lang="en">
 <div>
     <h1>Doctors</h1>
-    <ul>
-        <li th:each="doctor : ${doctors}" th:text="${doctor}"></li>
-    </ul>
+    <table class="table">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Specialization</th>
+                <th scope="col">Clinic</th>
+                <th scope="col">Phone number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="doctor : ${doctors}">
+                <th scope="row" th:text="${doctor.firstname} + ' ' + ${doctor.lastname}" ></th>
+                <td th:text="${doctor.specialization}"></td>
+                <td th:text="${doctor.clinic}"></td>
+                <td th:text="${doctor.phoneNumber}"></td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 </html>

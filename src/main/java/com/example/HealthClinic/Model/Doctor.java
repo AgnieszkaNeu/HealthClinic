@@ -10,14 +10,17 @@ public class Doctor extends User {
 
     private String licence;
 
+    private String clinic;
+
     public Doctor() {
     }
 
     public Doctor(String username, String firstname, String lastname, String phoneNumber,
-                  String password, String PESEL, String specialization, String licence){
+                  String password, String PESEL, String specialization, String licence, String clinic){
         super(username, firstname,lastname,phoneNumber,password,PESEL);
         this.specialization = specialization;
         this.licence = licence;
+        this.clinic = clinic;
     }
 
     public String getSpecialization() {
@@ -34,5 +37,13 @@ public class Doctor extends User {
 
     public void setLicence(String licence) {
         this.licence = licence;
+    }
+
+    public String getClinic() {
+        return clinic;
+    }
+
+    public void setClinic(String clinic) {
+        this.clinic = clinic;
     }
 }

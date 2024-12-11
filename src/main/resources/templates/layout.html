@@ -6,14 +6,20 @@
     <title>HealthClinic</title>
     <style>
         .custom-bg {
-            background-color: rgb(240, 240, 240); /* Niestandardowy kolor RGB */
+            background-color: rgb(240, 240, 240);
         }
     </style>
 </head>
 
 <body class="custom-bg">
     <nav class="navbar navbar-expand-sm text-white bg-success px-2 py-3">
-        <a class="navbar-brand text-white px-4" th:href="@{/home}">Health Clinic</a>
+
+        <div sec:authorize="hasAuthority('PATIENT')">
+            <a class="navbar-brand text-white px-4" th:href="@{/patient/dashboard}">Health Clinic</a>
+        </div>
+        <div sec:authorize="hasAuthority('DOCTOR')">
+            <a class="navbar-brand text-white px-4" th:href="@{/doctor/dashboard}">Health Clinic</a>
+        </div>
 
         <div sec:authorize="isAuthenticated()" class="ms-auto text-white px-4">
             <form action="/logout" method="post" th:action="@{/logout}">
